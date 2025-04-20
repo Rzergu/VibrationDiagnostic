@@ -1,0 +1,7 @@
+﻿@HimeraRadio_HostAddress = http://localhost:5130
+
+GET {{HimeraRadio_HostAddress}}/timer/
+Accept: application/json
+
+###
+

@@ -1,0 +1,94 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { 
+  height: 97vh;
+  overflow: hidden;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Structure */
+.example-container {
+    position: relative;
+    height: 85%;
+    overflow: hidden !important;
+  }
+
+  .example-table-container {
+    position: relative;
+    height: 99%;
+    overflow: auto;
+  }
+  .Sensors-container {
+    height: 100%;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .example-loading-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 56px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+  }
+  
+  .example-rate-limit-reached {
+    max-width: 360px;
+    text-align: center;
+  }
+  
+  /* Column Widths */
+  .mat-column-number,
+  .mat-column-state {
+    width: 64px;
+  }
+  
+  .mat-column-created {
+    width: 124px;
+  }
+  .main-container {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 10px;
+  }
+  .hello-text {
+    padding-left: 10px;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  .table-caption {
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  .timepicker-overlay {
+    z-index: 1100 !important;
+  }
+  
+  .timepicker-backdrop-overlay {
+    z-index: 1100 !important;
+  }
+
+  .mat-grid-tile-content {
+    align-items: start !important;
+    justify-self: top !important;
+    display: block !important;
+    margin: 10px !important;
+  }
+
+  .hidden {
+    opacity: 0%;
+    height: 0px;
+  }
+  .dialog-grid {
+    display: flex !important;
+    flex-direction: column;
+  }
+  .overflow {
+    overflow: auto;
+  }

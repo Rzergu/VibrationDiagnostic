@@ -1,0 +1,72 @@
+﻿services:
+  clientapp:
+    image: client-app
+    build:
+      context: ClientApp/angular-docker
+      dockerfile: ./Dockerfile
+    ports:
+      - 80:4200
+  himeraradio:
+    image: backend-app
+    container_name: backend-app
+    build:
+      context: .
+      dockerfile: VibroDiagnostic/Dockerfile
+    ports:
+      - 4445:8081
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:8081
+      ASPNETCORE_HTTPS_PORT: 8081
+      connectionString: Server=db;Port=5432;Database=DB;User Id=postgres;Password=MyPassword123;
+    volumes:
+      - ./certs/:/app/certs
+      - ./certsP/:/app/certsP
+    depends_on:
+      - db
+  db:
+    image: postgres
+    container_name: db
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "MyPassword123"
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+  mongo:
+    image: mongo:4.4.6
+    command: ["--bind_ip_all"]
+    container_name: myMongo
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+      ME_CONFIG_BASICAUTH: false
+  node-red:
+    image: nodered/node-red:latest
+    environment:
+      - TZ=Europe/Amsterdam
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./node-red-data:/data
+  
+volumes:
+  node-red-data:
+    driver: local

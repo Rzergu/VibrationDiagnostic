@@ -1,0 +1,56 @@
+services:
+  clientapp:
+    image: lieznovskiy/vibration-diagnostic-client:latest
+    restart: always
+    ports:
+      - 8082:80
+  backend:
+    image: lieznovskiy/vibration-diagnostic:latest
+    container_name: api
+    restart: always
+    ports:
+      - 4445:8081
+    depends_on:
+      - db
+      - mongo
+    volumes:
+      - ./certsP/:/app/certsP/
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:8081
+      ASPNETCORE_HTTPS_PORT: 8081
+      ASPNETCORE_AppSettings__SecretEncryption: "119477C6704319884D91AFF61C592E16"
+      ASPNETCORE_Kestrel__Certificates__Default__Password: "123"
+      ASPNETCORE_Kestrel__Certificates__Default__Path: "../../../../../../../../app/certsP/certificate.pfx"
+      connectionString: Server=db;Port=5432;Database=DB;User Id=postgres;Password=MyPassword123;
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  db:
+    image: postgres
+    container_name: db
+    restart: always
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "MyPassword123"
+  mongo:
+    image: mongo:4.4.6
+    platform: linux/arm64/v8
+    command: ["--bind_ip_all"]
+    container_name: myMongo
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - ./mongo_data:/data/db
+volumes:
+  pgdata:
+    driver: local
+  mongo_data:
+    driver: local

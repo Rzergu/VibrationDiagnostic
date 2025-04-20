@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VibroDiagnostic", "VibroDiagnostic\VibroDiagnostic.csproj", "{E7B68937-D67F-43D2-8172-8C1AFEDB6077}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VibroDiagnostic.Core", "..\VibroDiagnostic.Core\VibroDiagnostic.Core.csproj", "{1C373A26-D408-4D66-AD28-02CACE1E1CB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VibroDiagnostic.Data", "..\VibroDiagnostic.Data\VibroDiagnostic.Data.csproj", "{232B33B9-D018-4AD9-BE8F-71DD5B7D4E71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{35211FF0-6F02-4D77-9C77-699B382FD5FC}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7B68937-D67F-43D2-8172-8C1AFEDB6077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7B68937-D67F-43D2-8172-8C1AFEDB6077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7B68937-D67F-43D2-8172-8C1AFEDB6077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7B68937-D67F-43D2-8172-8C1AFEDB6077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C373A26-D408-4D66-AD28-02CACE1E1CB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C373A26-D408-4D66-AD28-02CACE1E1CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C373A26-D408-4D66-AD28-02CACE1E1CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C373A26-D408-4D66-AD28-02CACE1E1CB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{232B33B9-D018-4AD9-BE8F-71DD5B7D4E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232B33B9-D018-4AD9-BE8F-71DD5B7D4E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232B33B9-D018-4AD9-BE8F-71DD5B7D4E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232B33B9-D018-4AD9-BE8F-71DD5B7D4E71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC3CB6BE-8AF6-458C-990E-B8F55A9CDEC2}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,30 @@
+<div class="items-container">
+    <div class="items-container-header">
+    </div>
+    <div style="height:100%" fxLayout="row">
+        <div style="margin-right: 25px;">
+            <div fxLayout="column">
+                  <div class="item-container" style="height: 45vh;">
+                      <div class="item-container-header">
+                          <div class="item-container-header-left" style="font-size: 20pt;">Історичні показники</div>
+                      </div>
+                      <div class="state-graph-container" style="height: 100%;">
+                          <div class="analitic-graph" style="height: 100%;">
+                              <analitic-graph [data] = "sensorData" style="height: 100%; width: 100%;"></analitic-graph>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="item-container" style="margin-top: 24px; height: 45vh;">
+                    <div class="item-container-header">
+                        <div class="item-container-header-left" style="font-size: 20pt;">Поточні показники</div>
+                    </div>
+                  <div class="state-graph-container" style="overflow: hidden; height: 100%;">
+                      <div class="analitic-graph" style="height: 100%;">
+                          <simple-chart style="height: 100%;" [data] = "data"></simple-chart>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>

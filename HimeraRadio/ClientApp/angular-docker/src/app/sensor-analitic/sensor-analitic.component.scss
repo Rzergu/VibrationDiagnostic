@@ -1,0 +1,130 @@
+.things-container {
+    position: relative;
+    margin: 20px;
+  }
+  .things-header {
+    margin-bottom: 20px;
+  }
+  .thing-card{
+    margin-bottom: 10px;
+  }
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    height: 50px;
+    border-radius: 50%;
+    width: 50px;
+    background-size: cover;
+  }
+  .state-graph-legend {
+    display: flex;
+  }
+  .graph-legend-item {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    margin-right: 7px;
+    border-radius: 50px;
+    font-family: 'Roboto';
+    color: rgba(254,254,254,0.87);
+    font-size: 14px;
+    display: flex;
+  }
+  .graph-legend-item-color
+  {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 7px;
+    background-color: royalblue;
+  }
+  .item-container-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .item-container-header-left {
+    font-family: 'Roboto';
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: 600;
+  }
+  .item-container-header-right {
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .state-graph-container {
+    margin-left: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .state-graph-legend {
+    margin-bottom: 20px;
+  }
+  .notifications {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  .notification {
+    height: 55px;
+    padding-left: 15px;
+    font-family: 'Roboto';
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+  }
+  .border-critical {
+    border-bottom: #B00020 1px solid;
+  }
+  .search-btn {
+    height: 30px;
+    width: 30px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 0 0 5px;
+    color: #979797;
+    border: #979797 1px solid;
+  }
+  .main-color-bg {
+    background-color: #6002EE;
+  }
+  .second-color-bg {
+    background-color: #BB86FC;
+    color: #000;
+  }
+  .big-btn{
+    height: 40px;
+    width: 40px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .cards {
+    margin-left: 15px;
+    margin-right: 16px;
+  }
+  .example-header-image{
+  
+  }
+  .card-item-header-text{
+    margin-left: 16px;
+  }
+  .medium-btn{
+    height: 25px;
+    width: 25px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .rounded-btn {
+    font-family: 'Roboto';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }

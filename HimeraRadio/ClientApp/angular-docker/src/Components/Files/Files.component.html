@@ -1,0 +1,71 @@
+<h2 class="table-caption">Files:</h2>
+<div class="example-container overflow mat-elevation-z8">
+    @if (isLoadingResults || isRateLimitReached) {
+      <div class="example-loading-shade">
+        @if (isLoadingResults) {
+          <mat-spinner></mat-spinner>
+        }
+      </div>
+    }
+
+    <div class="example-table-container">
+  
+      <button class="dialog-btn" mat-raised-button (click)="openDialog()">Add new</button>
+      <table mat-table [dataSource]="data" class="example-table"
+             matSort matSortActive="created" matSortDisableClear matSortDirection="desc">
+  
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let row">{{row.name}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="isLatest">
+          <th [style.display]="SensorId === 0 || SensorId === 2? 'none': ''"  mat-header-cell *matHeaderCellDef>Is Latest</th>
+          <td [style.display]="SensorId === 0 || SensorId === 2? 'none': ''"  mat-cell *matCellDef="let row">{{row.isLatest}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="download">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button (click)="download(row)">
+                <mat-icon   aria-hidden="false" aria-label="Example icon-button with a heart icon" fontSet="fontIcons" fontIcon="fontIcon">+</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let row">
+            <button class="dialog-btn" mat-raised-button (click)="edit(row)">
+                <div>Edit</div>
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="gotoAnalitic">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button (click)="gotoAnalitic(row)">
+                <mat-icon   aria-hidden="false" aria-label="Example icon-button with a heart icon" fontSet="fontIcons" fontIcon="fontIcon">?</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button (click)="deleteRow(row)">
+                <mat-icon   aria-hidden="false" aria-label="Example icon-button with a heart icon" fontSet="fontIcons" fontIcon="fontIcon">x</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        [class.demo-row-is-clicked]="row === activeRow"></tr>
+      </table>
+    </div>
+
+    <mat-paginator class="hidden" [length]="resultsLength" [pageSize]="100"></mat-paginator>
+  </div>
+  
